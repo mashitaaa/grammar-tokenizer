@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokenizer Grammar Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Ibarra+Real+Nova:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <h1>Grammar Tokenizer</h1>
+      <p>
+        Analisis token program secara otomatis ke kategori:
+        <strong>Reserve Words</strong>, <strong>Simbol & Tanda Baca</strong>,
+        <strong>Variabel</strong>, dan <strong>Kalimat Matematika</strong>.
+      </p>
+    </header>
+
+    <section class="input-panel card">
+      <div class="panel-title">
+        <h2>Input Program</h2>
+        <div class="actions">
+          <button id="sampleBtn" class="btn btn-secondary">Isi Contoh</button>
+          <button id="analyzeBtn" class="btn btn-primary">Analisis Token</button>
+          <button id="clearBtn" class="btn btn-danger">Bersihkan</button>
+        </div>
+      </div>
+      <textarea id="codeInput" spellcheck="false" placeholder="Tempel kode program di sini...
+contoh:
+int total = a + b * 2;
+if (total > 10) {
+  print(total);
+}"></textarea>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <h3>Total Token</h3>
+        <p id="totalToken">0</p>
+      </article>
+      <article class="summary-card">
+        <h3>Reserve Words</h3>
+        <p id="reserveCount">0</p>
+      </article>
+      <article class="summary-card">
+        <h3>Simbol & Tanda Baca</h3>
+        <p id="symbolCount">0</p>
+      </article>
+      <article class="summary-card">
+        <h3>Variabel</h3>
+        <p id="variableCount">0</p>
+      </article>
+      <article class="summary-card">
+        <h3>Kalimat Matematika</h3>
+        <p id="mathCount">0</p>
+      </article>
+    </section>
+
+    <section class="results card">
+      <h2>Hasil Klasifikasi Token</h2>
+      <div class="token-groups">
+        <div class="token-box">
+          <h3>Reserve Words</h3>
+          <ul id="reserveList"></ul>
+        </div>
+        <div class="token-box">
+          <h3>Simbol & Tanda Baca</h3>
+          <ul id="symbolList"></ul>
+        </div>
+        <div class="token-box">
+          <h3>Variabel</h3>
+          <ul id="variableList"></ul>
+        </div>
+        <div class="token-box">
+          <h3>Kalimat Matematika</h3>
+          <ul id="mathList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-results card">
+      <div class="detail-header">
+        <h2>Hasil Tokenisasi</h2>
+        <div class="token-pill"><span id="tableTokenCount">0</span> Token</div>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Baris</th>
+              <th>Token</th>
+              <th>Kategori</th>
+            </tr>
+          </thead>
+          <tbody id="tokenTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

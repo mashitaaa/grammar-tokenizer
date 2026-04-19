@@ -1,6 +1,6 @@
 # Grammar Tokenizer 
 
-🚀 **Deployed Website : https://github.com/mashitaaa/grammar-tokenizer**
+🚀 **Deployed Website : https://mashitaaa.github.io/grammar-tokenizer/**
 
 Anggota **Kelompok 5** :
 
